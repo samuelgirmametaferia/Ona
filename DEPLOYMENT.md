@@ -28,7 +28,8 @@ Set these in your host’s dashboard. **Never commit real values to the repo.**
 | `LEMONSQUEEZY_VARIANT_ID_PRO` | Yes | Variant ID for Pro plan product. |
 | `LEMONSQUEEZY_VARIANT_ID_AGENCY` | Yes | Variant ID for Agency plan product. |
 | `LEMONSQUEEZY_WEBHOOK_SECRET` | Yes | From Lemon Squeezy webhook (signing secret). |
-| `NEXT_PUBLIC_APP_URL` | Yes | **Production URL**, e.g. `https://loadforge.org` or `https://app.loadforge.org`. Used for auth redirects, emails, and checkout success URL. |
+| `NEXT_PUBLIC_APP_URL` | Yes | **Production URL**, e.g. `https://loadforge.org`. Used for auth redirects, checkout success URL, and welcome email links. Set this in production so welcome emails do not link to localhost. |
+| `APP_URL` | Optional | Server-only; used for welcome email links. If set (e.g. `https://loadforge.org`), email links use this even when `NEXT_PUBLIC_APP_URL` is wrong. If the resolved URL is localhost, the code falls back to `https://loadforge.org` for emails. |
 | `RESEND_API_KEY` | Recommended | So welcome emails send after signup. |
 | `RESEND_FROM` | Recommended | e.g. `Loadforge <noreply@loadforge.org>` (use your verified Resend domain). |
 | `NEXT_PUBLIC_SUPPORT_EMAIL` | Optional | Shown on /contact page. |
@@ -38,13 +39,46 @@ Set these in your host’s dashboard. **Never commit real values to the repo.**
 
 ---
 
+## 2b. Generate SEND_WELCOME_SECRET and other changes from .env.local
+
+When you import `.env.local` into production, do the following.
+
+### Generate SEND_WELCOME_SECRET
+
+Run one of these in a terminal and paste the output into your production env as `SEND_WELCOME_SECRET`:
+
+**PowerShell:**
+```powershell
+[Convert]::ToBase64String((1..32 | ForEach-Object { Get-Random -Maximum 256 }) -as [byte[]])
+```
+
+**Node (if you have Node in PATH):**
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+Use the generated string only in production env (Vercel, etc.). Any caller of `POST /api/send-welcome` must send the header `X-Send-Welcome-Secret: <that-value>`.
+
+### What to change when moving .env.local to production
+
+| Item | In production |
+|------|----------------|
+| **NEXT_PUBLIC_APP_URL** | Your live URL, e.g. `https://your-app.vercel.app` or `https://loadforge.org`. **Must** be set. |
+| **SEND_WELCOME_SECRET** | Add the value you generated above (recommended so only your app/cron can trigger welcome emails). |
+| **Supabase** | If you use a separate production Supabase project: replace all three Supabase env vars with that project's values. |
+| **RESEND_FROM** | Use an address on your **verified** Resend domain (e.g. `Loadforge <noreply@yourdomain.com>`), not the default onboarding address. |
+| **Lemon Squeezy** | If you use a production store: use production API key, store ID, variant IDs, and create a **production** webhook with URL `https://<your-domain>/api/lemonsqueezy/webhook` and set `LEMONSQUEEZY_WEBHOOK_SECRET` to that webhook's signing secret. |
+| **Upstash** (optional) | Add `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` so rate limiting is shared across Vercel instances. |
+
+---
+
 ## 3. Supabase (production)
 
 - [ ] Create a **production** Supabase project (or use existing).
-- [ ] In **SQL Editor**, run the full `supabase/schema.sql` (tables, indexes, RLS, trigger, audit_log). Then run `supabase/schema-activity-campaigns.sql` for activity tracking and email campaigns. If you already have tables, run only the parts you’re missing or migrate carefully.
-- [ ] **Authentication → URL Configuration:**
-  - Set **Site URL** to your production app URL (e.g. `https://loadforge.org`).
-  - Add **Redirect URLs**: `https://loadforge.org/auth/callback`, `https://yourdomain.com/auth/callback` (all domains you use).
+- [ ] **SQL (run in order):** In **SQL Editor**, run the full `supabase/schema.sql` (tables, indexes, RLS, trigger, audit_log). Then run `supabase/schema-activity-campaigns.sql` for activity tracking and email campaigns. If you already have tables, run only the parts you’re missing or migrate carefully.
+- [ ] **Authentication → URL Configuration** (Dashboard → Authentication → URL Configuration):
+  - **Site URL:** your production app URL (e.g. `https://loadforge.org`). If this is still `http://localhost:3000`, post-login redirects will go to localhost.
+  - **Redirect URLs:** add `https://loadforge.org/auth/callback` (and www if needed). The app sends `window.location.origin + '/auth/callback'`, so Supabase must allow your production origin here.
 - [ ] **Authentication → Providers:** Enable Email and Google (or others) as needed. For Google, add the OAuth client ID/secret from Google Cloud Console; set authorized redirect URI to Supabase’s callback URL they show you.
 - [ ] Load or import your **leads** data into `public.leads` (the app expects rows there). Use admin upload or a one-off script.
 

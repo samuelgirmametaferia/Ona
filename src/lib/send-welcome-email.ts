@@ -13,7 +13,9 @@ export async function sendWelcomeEmail(email: string): Promise<{ ok: true; id?: 
 
   const from = process.env.RESEND_FROM ?? "Loadforge <onboarding@resend.dev>";
   const subject = "Welcome to Loadforge";
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://loadforge.org";
+  // Never use localhost in emails. Prefer APP_URL (server-only) so production emails always point to the live site.
+  const appUrl = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || "https://loadforge.org";
+  const baseUrl = /localhost/i.test(appUrl) ? "https://loadforge.org" : appUrl.replace(/\/$/, "");
   const dashboardUrl = `${baseUrl}/dashboard`;
 
   const html = `<!DOCTYPE html>
