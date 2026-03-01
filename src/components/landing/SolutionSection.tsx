@@ -3,8 +3,8 @@ import { Database, CheckCircle2, Download, Shield, RefreshCw } from "lucide-reac
 const features = [
   {
     icon: Database,
-    title: "One database, one niche",
-    text: "Every roofing contractor in Canada in one searchable, filterable list. No more juggling spreadsheets.",
+    title: "Comprehensive B2B database",
+    text: "Millions of verified companies in one searchable, filterable database. No more juggling spreadsheets or multiple sources.",
   },
   {
     icon: CheckCircle2,
@@ -33,10 +33,10 @@ export function SolutionSection() {
     <section className="border-b border-[var(--border)] px-4 py-24">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-center text-3xl font-bold text-[var(--text-primary)] md:text-4xl">
-          Your solution: verified data, zero scraping
+          Your solution: verified B2B data, zero scraping
         </h2>
         <p className="mt-4 text-center text-lg text-[var(--text-muted)]">
-          One place to search, filter, and export. Built for agencies and sales teams.
+          One platform to search, filter, and export verified contacts. Built for sales teams and agencies.
         </p>
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.slice(0, 3).map((f, i) => (

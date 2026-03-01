@@ -84,7 +84,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col items-center justify-center px-4 py-12">
       <Link href="/" className="mb-10 flex items-center gap-2 font-semibold text-[var(--text-primary)]">
         <Shield className="h-6 w-6 text-forge-500" />
-        Loadforge
+        LeadForge
       </Link>
       <div className="w-full max-w-md rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-lg)] transition-colors">
         <h1 className="text-2xl font-bold text-[var(--text-primary)]">Log in</h1>

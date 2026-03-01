@@ -21,8 +21,8 @@ export function LandingSocialProof({ leadCount }: { leadCount: number }) {
           </div>
           <div className="h-8 w-px bg-[var(--border)] hidden sm:block" />
           <div className="text-center">
-            <p className="text-3xl font-bold text-[var(--text-primary)] md:text-4xl">Canada</p>
-            <p className="text-sm text-[var(--text-muted)]">Roofing contractors</p>
+            <p className="text-3xl font-bold text-[var(--text-primary)] md:text-4xl">100%</p>
+            <p className="text-sm text-[var(--text-muted)]">Verified contacts</p>
           </div>
         </div>
       </div>

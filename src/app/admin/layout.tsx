@@ -29,7 +29,7 @@ export default async function AdminLayout({
           <div className="flex items-center gap-6">
             <Link href="/admin" className="flex items-center gap-2 font-semibold text-amber-400">
               <Shield className="h-5 w-5" />
-              Loadforge Admin
+              LeadForge Admin
             </Link>
             <nav className="flex flex-wrap gap-4">
               <Link href="/admin" className="flex items-center gap-2 text-sm text-stone-400 hover:text-white">

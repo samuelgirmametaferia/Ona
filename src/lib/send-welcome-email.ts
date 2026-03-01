@@ -11,11 +11,11 @@ export async function sendWelcomeEmail(email: string): Promise<{ ok: true; id?: 
     return { ok: false, error: "RESEND_API_KEY not set" };
   }
 
-  const from = process.env.RESEND_FROM ?? "Loadforge <onboarding@resend.dev>";
-  const subject = "Welcome to Loadforge";
+  const from = process.env.RESEND_FROM ?? "LeadForge <onboarding@resend.dev>";
+  const subject = "Welcome to LeadForge";
   // Never use localhost in emails. Prefer APP_URL (server-only) so production emails always point to the live site.
-  const appUrl = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || "https://loadforge.org";
-  const baseUrl = /localhost/i.test(appUrl) ? "https://loadforge.org" : appUrl.replace(/\/$/, "");
+  const appUrl = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || "https://leadforge.io";
+  const baseUrl = /localhost/i.test(appUrl) ? "https://leadforge.io" : appUrl.replace(/\/$/, "");
   const dashboardUrl = `${baseUrl}/dashboard`;
 
   const html = `<!DOCTYPE html>
@@ -24,9 +24,9 @@ export async function sendWelcomeEmail(email: string): Promise<{ ok: true; id?: 
     <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: auto; background: #ffffff; padding: 40px; border-radius: 8px;">
       <tr>
         <td align="center">
-          <h2 style="margin-bottom: 10px;">Welcome to Loadforge</h2>
+          <h2 style="margin-bottom: 10px;">Welcome to LeadForge</h2>
           <p style="color: #555; font-size: 15px;">
-            The most accurate database of roofing contractors in Canada.
+            The most accurate B2B lead database for your outreach.
           </p>
         </td>
       </tr>
@@ -34,7 +34,7 @@ export async function sendWelcomeEmail(email: string): Promise<{ ok: true; id?: 
       <tr>
         <td style="padding: 30px 0;">
           <p style="font-size: 16px; color: #333;">
-            You're all set. Search, filter, and export verified roofing contractor leads.
+            You're all set. Search, filter, and export verified B2B contacts.
           </p>
 
           <p style="font-size: 16px; color: #333;">
@@ -56,7 +56,7 @@ export async function sendWelcomeEmail(email: string): Promise<{ ok: true; id?: 
 
       <tr>
         <td style="border-top: 1px solid #eee; padding-top: 20px; font-size: 12px; color: #999;" align="center">
-          © Loadforge — One niche. One country. Verified.
+          © LeadForge — Verified B2B contacts. Real results.
         </td>
       </tr>
     </table>

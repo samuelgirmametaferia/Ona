@@ -3,15 +3,15 @@ import { Shield, HelpCircle } from "lucide-react";
 import { FAQAccordion } from "@/components/landing/FAQAccordion";
 
 export const metadata = {
-  title: "FAQ | Loadforge",
-  description: "Frequently asked questions about Loadforge: data freshness, refunds, cancellation, and verification.",
+  title: "FAQ | LeadForge",
+  description: "Frequently asked questions about LeadForge: data freshness, refunds, cancellation, and verification.",
 };
 
 const faqs = [
   {
     id: "data-freshness",
     question: "How fresh is the data?",
-    answer: "We update our database monthly. Each lead shows a verification date so you know when it was last checked. We focus on one niche—roofing contractors in Canada—so we can keep quality high.",
+    answer: "We update our database monthly. Each lead shows a verification date so you know when it was last checked. We verify contacts across industries to ensure high-quality B2B data.",
   },
   {
     id: "refund",
@@ -47,7 +47,7 @@ export default function FAQPage() {
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
             <Shield className="h-5 w-5 text-forge-500" />
-            Loadforge
+            LeadForge
           </Link>
           <nav className="flex items-center gap-4">
             <Link href="/#pricing" className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)]">
@@ -70,7 +70,7 @@ export default function FAQPage() {
           <div>
             <h1 className="text-3xl font-bold text-[var(--text-primary)]">Frequently asked questions</h1>
             <p className="mt-1 text-[var(--text-muted)]">
-              Data, billing, and how to get the most out of Loadforge.
+              Data, billing, and how to get the most out of LeadForge.
             </p>
           </div>
         </div>

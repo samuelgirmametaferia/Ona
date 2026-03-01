@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Shield, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Contact | Loadforge",
-  description: "Contact Loadforge for support and inquiries.",
+  title: "Contact | LeadForge",
+  description: "Contact LeadForge for support and inquiries.",
 };
 
-const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@loadforge.org";
+const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@leadforge.io";
 
 export default function ContactPage() {
   return (
@@ -15,7 +15,7 @@ export default function ContactPage() {
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
             <Shield className="h-5 w-5 text-forge-500" />
-            Loadforge
+            LeadForge
           </Link>
           <Link href="/" className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)]">
             Back to home
@@ -52,7 +52,7 @@ export default function ContactPage() {
         </div>
 
         <p className="mt-10 text-sm text-[var(--text-muted)]">
-          <Link href="/" className="text-forge-500 hover:underline">← Back to Loadforge</Link>
+          <Link href="/" className="text-forge-500 hover:underline">← Back to LeadForge</Link>
         </p>
       </main>
     </div>

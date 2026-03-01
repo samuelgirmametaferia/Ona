@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy | Loadforge",
-  description: "Privacy Policy for Loadforge B2B lead database.",
+  title: "Privacy Policy | LeadForge",
+  description: "Privacy Policy for LeadForge B2B lead database.",
 };
 
 export default function PrivacyPage() {
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
             <Shield className="h-5 w-5 text-forge-500" />
-            Loadforge
+            LeadForge
           </Link>
           <Link href="/" className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)]">
             Back to home
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-lg font-semibold text-[var(--text-primary)]">1. Who we are</h2>
             <p className="mt-2">
-              Loadforge (“we”) operates a B2B lead database service. This policy describes how we collect, use, and protect your information when you use our website and service.
+              LeadForge (“we”) operates a B2B lead database service. This policy describes how we collect, use, and protect your information when you use our website and service.
             </p>
           </section>
 
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
         </div>
 
         <p className="mt-12 text-sm text-[var(--text-muted)]">
-          <Link href="/" className="text-forge-500 hover:underline">← Back to Loadforge</Link>
+          <Link href="/" className="text-forge-500 hover:underline">← Back to LeadForge</Link>
         </p>
       </main>
     </div>

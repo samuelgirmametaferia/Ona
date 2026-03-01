@@ -22,7 +22,7 @@ export function DashboardNav({ email, isAdmin }: { email: string; isAdmin: boole
         <div className="flex items-center gap-8">
           <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
             <Shield className="h-5 w-5 text-forge-500" />
-            Loadforge
+            LeadForge
           </Link>
           <nav className="flex gap-4">
             <Link

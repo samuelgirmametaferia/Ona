@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Shield, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Status | Loadforge",
-  description: "Loadforge service status and maintenance updates.",
+  title: "Status | LeadForge",
+  description: "LeadForge service status and maintenance updates.",
 };
 
 export default function StatusPage() {
@@ -13,7 +13,7 @@ export default function StatusPage() {
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
             <Shield className="h-5 w-5 text-forge-500" />
-            Loadforge
+            LeadForge
           </Link>
           <nav className="flex items-center gap-4">
             <Link href="/faq" className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)]">
@@ -32,7 +32,7 @@ export default function StatusPage() {
           </div>
           <h1 className="mt-6 text-3xl font-bold text-[var(--text-primary)]">All systems operational</h1>
           <p className="mt-3 text-[var(--text-muted)]">
-            Loadforge and its dependencies are running normally. If you experience issues, please{" "}
+            LeadForge and its dependencies are running normally. If you experience issues, please{" "}
             <Link href="/contact" className="text-forge-500 hover:underline">contact us</Link>.
           </p>
         </div>

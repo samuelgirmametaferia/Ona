@@ -30,7 +30,7 @@ export async function POST(
 
   const conditions: CampaignConditions = (campaign.conditions as CampaignConditions) ?? {};
   const recipients = await getRecipientsByConditions(conditions);
-  const from = process.env.RESEND_FROM ?? "Loadforge <noreply@loadforge.org>";
+  const from = process.env.RESEND_FROM ?? "LeadForge <noreply@leadforge.io>";
   const resend = new Resend(apiKey);
   const results: { email: string; ok: boolean; error?: string }[] = [];
 

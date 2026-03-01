@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Terms of Service | Loadforge",
-  description: "Terms of Service for Loadforge B2B lead database.",
+  title: "Terms of Service | LeadForge",
+  description: "Terms of Service for LeadForge B2B lead database.",
 };
 
 export default function TermsPage() {
@@ -13,7 +13,7 @@ export default function TermsPage() {
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
             <Shield className="h-5 w-5 text-forge-500" />
-            Loadforge
+            LeadForge
           </Link>
           <Link href="/" className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)]">
             Back to home
@@ -28,14 +28,14 @@ export default function TermsPage() {
           <section>
             <h2 className="text-lg font-semibold text-[var(--text-primary)]">1. Agreement</h2>
             <p className="mt-2">
-              By using Loadforge (“Service”), you agree to these Terms of Service. If you do not agree, do not use the Service.
+              By using LeadForge (“Service”), you agree to these Terms of Service. If you do not agree, do not use the Service.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-semibold text-[var(--text-primary)]">2. Description of Service</h2>
             <p className="mt-2">
-              Loadforge provides a subscription-based B2B lead database (e.g. roofing contractors in Canada). Access, filters, and export limits depend on your plan (Free, Pro, Agency).
+              LeadForge provides a subscription-based B2B lead database with verified company contacts across industries. Access, filters, and export limits depend on your plan (Free, Pro, Agency).
             </p>
           </section>
 
@@ -74,7 +74,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-lg font-semibold text-[var(--text-primary)]">7. Limitation of Liability</h2>
             <p className="mt-2">
-              The Service is provided “as is.” To the maximum extent permitted by law, Loadforge and its operators are not liable for any indirect, incidental, or consequential damages, or loss of profits or data, arising from your use of the Service.
+              The Service is provided “as is.” To the maximum extent permitted by law, LeadForge and its operators are not liable for any indirect, incidental, or consequential damages, or loss of profits or data, arising from your use of the Service.
             </p>
           </section>
 
@@ -94,7 +94,7 @@ export default function TermsPage() {
         </div>
 
         <p className="mt-12 text-sm text-[var(--text-muted)]">
-          <Link href="/" className="text-forge-500 hover:underline">← Back to Loadforge</Link>
+          <Link href="/" className="text-forge-500 hover:underline">← Back to LeadForge</Link>
         </p>
       </main>
     </div>

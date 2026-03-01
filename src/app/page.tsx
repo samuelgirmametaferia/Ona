@@ -30,14 +30,14 @@ export default async function HomePage() {
         <section className="border-b border-[var(--border)] px-4 pb-28 pt-24 md:pb-36 md:pt-32">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="animate-fade-up text-4xl font-bold tracking-tight text-[var(--text-primary)] md:text-5xl lg:text-6xl lg:leading-tight">
-              The most accurate database of{" "}
-              <span className="text-forge-500">roofing contractors</span> in Canada
+              The most accurate{" "}
+              <span className="text-forge-500">B2B lead database</span> for your outreach
             </h1>
             <p className="animate-fade-up mt-8 text-xl text-[var(--text-muted)] md:text-2xl" style={{ animationDelay: "0.1s" }}>
-              Verified monthly. No scraped junk. Built for agencies.
+              Verified contacts. Real emails. Built for sales teams and agencies.
             </p>
             <p className="animate-fade-up mt-3 text-lg text-[var(--text-muted)]" style={{ animationDelay: "0.15s" }}>
-              {leadCount.toLocaleString()} companies — search, filter, and export in minutes.
+              {leadCount.toLocaleString()}+ companies — search, filter, and export verified contacts in minutes.
             </p>
             <div className="animate-fade-up mt-12 flex flex-wrap items-center justify-center gap-5" style={{ animationDelay: "0.2s" }}>
               <Link
@@ -72,7 +72,7 @@ export default async function HomePage() {
               See what you get
             </h2>
             <p className="mt-4 text-center text-lg text-[var(--text-muted)]">
-              Company names, location, and verification dates. Unlock to see emails & phones.
+              Company names, location, and verification dates. Unlock to see verified emails & phone numbers.
             </p>
             <div className="mt-14">
               <PreviewTable />
@@ -90,7 +90,7 @@ export default async function HomePage() {
         <section className="border-t border-[var(--border)] px-4 py-24">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-[var(--text-primary)] md:text-4xl">
-              Stop wasting 20 hours scraping. Get verified contacts instantly.
+              Stop wasting hours on bad data. Get verified B2B contacts instantly.
             </h2>
             <Link
               href="/api/lemonsqueezy/checkout-public?plan=pro"
@@ -104,7 +104,7 @@ export default async function HomePage() {
         <CookieNotice />
         <footer className="border-t border-[var(--border)] px-4 py-10">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 text-sm text-[var(--text-muted)]">
-            <span>© Loadforge. One niche. One country. Verified.</span>
+            <span>© LeadForge. Verified B2B contacts. Real results.</span>
             <nav className="flex flex-wrap items-center gap-6">
               <Link href="/faq" className="hover:text-[var(--text-primary)]">FAQ</Link>
               <Link href="/status" className="hover:text-[var(--text-primary)]">Status</Link>

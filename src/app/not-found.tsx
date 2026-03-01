@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col items-center justify-center px-4 bg-[var(--bg-primary)]">
       <Link href="/" className="mb-8 flex items-center gap-2 font-semibold text-[var(--text-primary)]">
         <Shield className="h-6 w-6 text-forge-500" />
-        Loadforge
+        LeadForge
       </Link>
       <div className="text-center">
         <p className="text-8xl font-bold text-[var(--text-muted)]">404</p>

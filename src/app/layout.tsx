@@ -9,25 +9,25 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://loadforge.org";
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://leadforge.io";
 
 export const metadata: Metadata = {
-  title: "Loadforge | Verified B2B Lead Database",
+  title: "LeadForge | Verified B2B Lead Database",
   description:
-    "The most accurate database of roofing contractors in Canada. Verified contacts. Updated monthly. No scraped junk—built for agencies.",
+    "The most accurate B2B lead database for your outreach. Verified contacts. Updated monthly. No scraped junk—built for sales teams and agencies.",
   metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Loadforge | Verified B2B Lead Database",
+    title: "LeadForge | Verified B2B Lead Database",
     description:
-      "The most accurate database of roofing contractors in Canada. Verified monthly. No scraped junk.",
+      "The most accurate B2B lead database. Verified contacts. Updated monthly. No scraped junk.",
     url: baseUrl,
-    siteName: "Loadforge",
+    siteName: "LeadForge",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loadforge | Verified B2B Lead Database",
-    description: "Roofing contractors in Canada. Verified monthly. No scraped junk.",
+    title: "LeadForge | Verified B2B Lead Database",
+    description: "Verified B2B contacts. Updated monthly. No scraped junk.",
   },
   icons: {
     icon: { url: "/favicon.svg", type: "image/svg+xml" },
@@ -44,7 +44,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('loadforge-theme');var s=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:s);})();`,
+            __html: `(function(){var t=localStorage.getItem('leadforge-theme');var s=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:s);})();`,
           }}
         />
       </head>

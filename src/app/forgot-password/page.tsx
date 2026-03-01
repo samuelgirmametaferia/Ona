@@ -16,8 +16,12 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     setError("");
     setLoading(true);
+    // Use NEXT_PUBLIC_APP_URL if set (production), otherwise use window.location.origin (local dev)
+    // This ensures password reset emails always point to the correct domain
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || window.location.origin;
+    const resetUrl = `${baseUrl}/reset-password`;
     const { error: err } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
+      redirectTo: resetUrl,
     });
     setLoading(false);
     if (err) {
@@ -63,7 +67,7 @@ export default function ForgotPasswordPage() {
       </Link>
       <Link href="/" className="mb-10 flex items-center gap-2 font-semibold text-[var(--text-primary)]">
         <Shield className="h-6 w-6 text-forge-500" />
-        Loadforge
+        LeadForge
       </Link>
       <div className="w-full max-w-md rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-lg)] transition-colors">
         <h1 className="text-2xl font-bold text-[var(--text-primary)]">Reset password</h1>

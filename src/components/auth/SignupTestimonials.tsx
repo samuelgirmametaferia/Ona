@@ -5,13 +5,13 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Stopped wasting 20 hours scraping. Had a list of 500 roofing contacts in 10 minutes.",
+    quote: "Stopped wasting 20 hours scraping. Had a list of 500 verified B2B contacts in 10 minutes.",
     author: "Sarah M.",
     role: "Marketing agency owner",
     stars: 5,
   },
   {
-    quote: "One closed deal paid for Loadforge for the year. No-brainer for B2B outreach.",
+    quote: "One closed deal paid for LeadForge for the year. No-brainer for B2B outreach.",
     author: "James K.",
     role: "SaaS founder",
     stars: 5,
@@ -19,7 +19,7 @@ const testimonials = [
   {
     quote: "Finally a list that’s actually verified. Emails that bounce are rare.",
     author: "Alex T.",
-    role: "Wholesaler",
+    role: "Sales director",
     stars: 5,
   },
 ];

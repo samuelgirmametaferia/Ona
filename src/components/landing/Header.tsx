@@ -16,7 +16,7 @@ export function Header() {
           className="flex items-center gap-2 font-semibold text-[var(--text-primary)]"
         >
           <Shield className="h-6 w-6 text-forge-500" />
-          Loadforge
+          LeadForge
         </Link>
         <nav className="flex items-center gap-4">
           <ThemeToggle />
